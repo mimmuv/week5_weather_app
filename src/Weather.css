@@ -1,0 +1,9 @@
+ul {
+  display: inline;
+  text-align: center;
+}
+form {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
