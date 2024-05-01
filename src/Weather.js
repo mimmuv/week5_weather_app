@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather() {
   let [city, setCity] = useState(" ");
@@ -58,7 +59,7 @@ export default function Weather() {
       .catch((error) => setMessage("enter valid city"));
   }
   return (
-    <div>
+    <div className="weather">
       <form onSubmit={fetchData}>
         <input
           type="text"

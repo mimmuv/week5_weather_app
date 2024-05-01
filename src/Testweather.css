@@ -1,0 +1,16 @@
+.testweather {
+  border: 2px solid gray;
+}
+.testweather h2 {
+  text-align: left;
+  margin: 0;
+}
+.testweather ul {
+  text-align: left;
+  list-style: none;
+  margin: 0;
+}
+h2,
+ul {
+  margin: 0;
+}

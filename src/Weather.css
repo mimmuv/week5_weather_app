@@ -7,3 +7,6 @@ form {
   text-align: center;
   margin-top: 40px;
 }
+.weather {
+  border: 2px solid rgb(255, 0, 0);
+}
