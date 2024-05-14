@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weatherform />
+        <Weatherform defaultCity="Harare" />
         <small>
           Coded by Miriro. See my..
           <a

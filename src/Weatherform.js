@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import "./Weatherform.css";
 
-export default function Weatherform() {
+export default function Weatherform(props) {
   const [weather, setWeather] = useState({ ready: false });
 
   function showWeather(response) {
@@ -73,8 +73,7 @@ export default function Weatherform() {
       </div>
     );
   } else {
-    let city = "harare";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=866a208a73eeff02182218e9441647a1&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=866a208a73eeff02182218e9441647a1&units=metric`;
 
     axios
       .get(url)
