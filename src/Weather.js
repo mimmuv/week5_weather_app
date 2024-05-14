@@ -4,49 +4,64 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather() {
-  let [city, setCity] = useState(" ");
-  let [message, setMessage] = useState(" ");
+  let [city, setCity] = useState("");
+  let [output, setOutput] = useState("");
   //const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState({});
-
-  // function searchSubmit(event) {
-  //   event.preventDefault();
-  // }
+  const [weather, setWeather] = useState({ ready: false });
 
   function showWeather(response) {
     //setLoaded(true);
     //setTemperature();
     console.log(response);
 
-    // if (response.data !== null || response.data !== undefined) {
-    // setLoaded(false);
     setWeather({
       temp: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
+      ready: true,
     });
-    if (response.data !== null || response.data !== undefined) {
-      setMessage(
-        <ul>
-          <li>Temperature: {Math.round(response.data.main.temp)}°C</li>
-          <li>Description: {response.data.weather[0].description}</li>
-          <li>Humidity: {response.data.main.humidity}%</li>
-          <li>Wind: {Math.round(response.data.wind.speed)}km/hr </li>
-          <li>
-            <img
-              src={`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-              alt={weather.description}
-            />
-          </li>
-        </ul>
+    // if (response.data !== null || response.data !== undefined) {
+    // setLoaded(false);
+
+    // if (response.data === null) {
+    //   setOutput(<p>testing</p>);
+    // }
+
+    //if (response.data !== null || response.data !== undefined) {
+    if (weather.ready) {
+      setOutput(
+        <div className="Container">
+          <div className="row">
+            <div className="col-6">
+              <ul>
+                <li className="cityname">{response.data.name}</li>
+                <li>
+                  <img
+                    src={`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
+                    alt="icon"
+                  />
+                </li>
+                <li>Temperature: {weather.temp}°C</li>
+              </ul>
+            </div>
+            <div className="col-6">
+              <ul>
+                <li>Description: {response.data.weather[0].description}</li>
+                <li>Humidity: {response.data.main.humidity}%</li>
+                <li>Wind: {Math.round(response.data.wind.speed)}km/hr </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       );
     } else {
-      setMessage("test");
+      setOutput("test");
     }
   }
 
   function updateCity(event) {
+    event.preventDefault();
     setCity(event.target.value);
   }
   function fetchData(event) {
@@ -56,7 +71,7 @@ export default function Weather() {
     axios
       .get(url)
       .then(showWeather)
-      .catch((error) => setMessage("enter valid city"));
+      .catch((error) => setOutput("enter valid city"));
   }
   return (
     <div className="weather">
@@ -68,7 +83,8 @@ export default function Weather() {
         />
         <button>Search</button>
       </form>
-      <div>{message}</div>
+
+      <div className="message">{output}</div>
     </div>
   );
 }

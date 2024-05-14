@@ -1,6 +1,7 @@
 ul {
   display: inline;
-  text-align: center;
+
+  list-style: none;
 }
 form {
   display: block;
@@ -9,4 +10,13 @@ form {
 }
 .weather {
   border: 2px solid rgb(255, 0, 0);
+  border-radius: 10px;
+}
+.message {
+  text-align: left;
+  margin-left: 10px;
+}
+.cityname {
+  font-weight: bolder;
+  font-size: 24px;
 }

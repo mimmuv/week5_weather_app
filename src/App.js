@@ -1,5 +1,5 @@
 import React from "react";
-import Testweather from "./Testweather";
+import Weatherform from "./Weatherform";
 import "./App.css";
 import Weather from "./Weather";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Testweather />
+        <Weatherform />
         <small>
           Coded by Miriro. See my..
           <a
@@ -20,7 +20,7 @@ function App() {
         </small>
         <br />
         <br />
-        <Weather />
+        <Weather city="London" />
       </div>
     </div>
   );
