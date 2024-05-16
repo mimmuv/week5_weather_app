@@ -7,7 +7,7 @@ import Formatdate from "./Formatdate";
 
 export default function Weatherform(props) {
   const [weather, setWeather] = useState({ ready: false });
-  const [city, setCity] = useState(props.defaultcity);
+  const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
     console.log(response);
@@ -24,12 +24,9 @@ export default function Weatherform(props) {
   }
 
   function search() {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=866a208a73eeff02182218e9441647a1&units=metric`;
+    let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=866a208a73eeff02182218e9441647a1&units=metric`;
 
-    axios
-      .get(url)
-      .then(showWeather)
-      .catch((error) => "enter valid city");
+    axios.get(url).then(showWeather);
   }
 
   function changeCity(event) {
@@ -38,6 +35,7 @@ export default function Weatherform(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    search();
   }
 
   if (weather.ready) {
