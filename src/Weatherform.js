@@ -3,11 +3,13 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 
 import "./Weatherform.css";
+import Formatdate from "./Formatdate";
 
 export default function Weatherform(props) {
   const [weather, setWeather] = useState({ ready: false });
 
   function showWeather(response) {
+    console.log(response);
     setWeather({
       temp: response.data.main.temp,
       description: response.data.weather[0].description,
@@ -15,6 +17,7 @@ export default function Weatherform(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
       ready: true,
     });
   }
@@ -43,7 +46,9 @@ export default function Weatherform(props) {
           <br />
           <h2 id="city-name">{weather.city}</h2>
           <ul>
-            <li id="date-today">Monday, June 12th 2023</li>
+            <li>
+              <Formatdate date={weather.date} />
+            </li>
             <li className="text-capitalize">{weather.description}</li>
           </ul>
           <div className="row">

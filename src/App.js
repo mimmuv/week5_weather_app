@@ -20,7 +20,6 @@ function App() {
         </small>
         <br />
         <br />
-        <Weather city="London" />
       </div>
     </div>
   );
