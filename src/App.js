@@ -1,7 +1,7 @@
 import React from "react";
 import Weatherform from "./Weatherform";
 import "./App.css";
-import Weather from "./Weather";
+
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
@@ -10,7 +10,12 @@ function App() {
       <div className="container">
         <Weatherform defaultCity="Harare" />
         <small>
-          Coded by Miriro. See my..
+          Coded by{" "}
+          <a href="https://bejewelled-faun-042079.netlify.app/" target="_blank">
+            {" "}
+            Miriro.{" "}
+          </a>{" "}
+          See my..
           <a
             href="https://github.com/mimmuv/miriro-vanilla-weather-app"
             target="_blank"
