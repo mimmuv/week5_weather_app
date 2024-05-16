@@ -15,7 +15,7 @@ function App() {
             {" "}
             Miriro.{" "}
           </a>{" "}
-          See my..
+          See my{" "}
           <a
             href="https://github.com/mimmuv/miriro-vanilla-weather-app"
             target="_blank"
