@@ -98,6 +98,6 @@ export default function Weatherform(props) {
   } else {
     search();
 
-    return "fetching data...";
+    // return "fetching data...";
   }
 }
