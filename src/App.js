@@ -22,8 +22,8 @@ function App() {
           See my{" "}
           <a
             href="https://github.com/mimmuv/miriro-vanilla-weather-app"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             GitHub repository.
           </a>
