@@ -61,7 +61,7 @@ export default function Weatherform(props) {
           </h1>
 
           <br />
-          <h2 id="city-name">{weather.city}</h2>
+          <h2 className="cityName">{weather.city}</h2>
           <ul>
             <li>
               <Formatdate date={weather.date} />
@@ -75,7 +75,9 @@ export default function Weatherform(props) {
                 src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
                 alt="weathericon"
               />
-              <Changeunits celcius={weather.temp} />
+              <span>
+                <Changeunits celcius={weather.temp} />
+              </span>
             </div>
 
             <div className="col-6" id="weather-elements">
