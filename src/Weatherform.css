@@ -22,3 +22,12 @@ ul {
 .search {
   font-size: 18px;
 }
+
+.temperatureValue {
+  font-size: 36px;
+}
+.icontemp {
+  margin: 0 auto;
+  display: block;
+  text-align: left;
+}

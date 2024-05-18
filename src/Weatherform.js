@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
-
+import Changeunits from "./Changeunits";
 import "./Weatherform.css";
 import Formatdate from "./Formatdate";
 
@@ -69,14 +69,13 @@ export default function Weatherform(props) {
             <li className="text-capitalize">{weather.description}</li>
           </ul>
           <div className="row">
-            <div className="col-6">
+            <div className="col-6 icontemp">
               {" "}
               <img
                 src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
                 alt="weathericon"
-                id="weather-icon"
-              />{" "}
-              {Math.round(weather.temp)}℃
+              />
+              <Changeunits celcius={weather.temp} />
             </div>
 
             <div className="col-6" id="weather-elements">
