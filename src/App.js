@@ -11,7 +11,11 @@ function App() {
         <Weatherform defaultCity="Harare" />
         <small>
           Coded by{" "}
-          <a href="https://bejewelled-faun-042079.netlify.app/" target="_blank">
+          <a
+            href="https://bejewelled-faun-042079.netlify.app/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             {" "}
             Miriro.{" "}
           </a>{" "}
@@ -19,6 +23,7 @@ function App() {
           <a
             href="https://github.com/mimmuv/miriro-vanilla-weather-app"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub repository.
           </a>
