@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Changeunits from "./Changeunits";
 import "./Weatherform.css";
 import Formatdate from "./Formatdate";
+import Weeklyforecast from "./Weeklyforecast";
 
 export default function Weatherform(props) {
   const [weather, setWeather] = useState({ ready: false });
@@ -92,6 +93,7 @@ export default function Weatherform(props) {
             </div>
           </div>
           <div></div>
+          <Weeklyforecast />
         </div>
       </div>
     );

@@ -10,6 +10,7 @@ function App() {
       <div className="container">
         <h1> Weather App</h1>
         <Weatherform defaultCity="Harare" />
+
         <small>
           Coded by{" "}
           <a
