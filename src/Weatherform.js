@@ -11,8 +11,9 @@ export default function Weatherform(props) {
   const [city, setCity] = useState(props.defaultCity);
 
   function showWeather(response) {
-    console.log(response);
+    // console.log(response);
     setWeather({
+      coordinates: response.data.coord,
       temp: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
@@ -92,8 +93,8 @@ export default function Weatherform(props) {
               </ul>
             </div>
           </div>
-          <div></div>
-          <Weeklyforecast />
+
+          <Weeklyforecast coordinates={weather.coordinates} />
         </div>
       </div>
     );
