@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Weeklyforecast.css";
 import { useState } from "react";
+import Forecastday from "./Forecastday";
 
 export default function Weeklyforecast(props) {
   //console.log(props);
@@ -22,7 +23,9 @@ export default function Weeklyforecast(props) {
       <div className="WeeklyForecast">
         <div className="row">
           <div className="col">
-            <div className="forecastDay">{forecastweather[0].dt}</div>
+            <div className="forecastDay">
+              <Forecastday date={forecastweather[0].dt} />
+            </div>
             <div>
               <img
                 className="weeklyicon"
