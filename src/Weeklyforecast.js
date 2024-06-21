@@ -2,19 +2,16 @@ import React from "react";
 import axios from "axios";
 import "./Weeklyforecast.css";
 import { useState } from "react";
-import Forecastday from "./Forecastday";
+//import Forecastday from "./Forecastday";
+import Displayforecast from "./Displayforecast";
 
 export default function Weeklyforecast(props) {
   //console.log(props);
   let [ready, setReady] = useState(false);
   let [forecastweather, setWeather] = useState(null);
 
-  // function getWeeklyData() {
-
-  // }
-
   function setWeeklyForecast(response) {
-    console.log(response);
+    // console.log(response);
     setReady(true);
     setWeather(response.data.daily);
   }
@@ -23,23 +20,19 @@ export default function Weeklyforecast(props) {
       <div className="WeeklyForecast">
         <div className="row">
           <div className="col">
-            <div className="forecastDay">
-              <Forecastday date={forecastweather[0].dt} />
-            </div>
-            <div>
-              <img
-                className="weeklyicon"
-                src={`https://openweathermap.org/img/wn/${forecastweather[0].weather[0].icon}@2x.png`}
-                alt="weeklyweathericon"
-              />
-            </div>
-            <span className="maxTemp">
-              {Math.round(forecastweather[0].temp.max)}º
-            </span>
-            &nbsp;
-            <span className="minTemp">
-              {Math.round(forecastweather[0].temp.min)}º
-            </span>
+            <Displayforecast data={forecastweather[0]} />{" "}
+          </div>
+          <div className="col">
+            <Displayforecast data={forecastweather[1]} />{" "}
+          </div>
+          <div className="col">
+            <Displayforecast data={forecastweather[2]} />{" "}
+          </div>
+          <div className="col">
+            <Displayforecast data={forecastweather[3]} />{" "}
+          </div>
+          <div className="col">
+            <Displayforecast data={forecastweather[4]} />{" "}
           </div>
         </div>
       </div>
