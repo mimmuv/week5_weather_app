@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import "./Weeklyforecast.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //import Forecastday from "./Forecastday";
 import Displayforecast from "./Displayforecast";
 
@@ -15,6 +15,11 @@ export default function Weeklyforecast(props) {
     setReady(true);
     setWeather(response.data.daily);
   }
+
+  useEffect(() => {
+    setReady(false);
+  }, [props.coordinates]);
+
   if (ready) {
     return (
       <div className="WeeklyForecast">
