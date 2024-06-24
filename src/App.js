@@ -23,7 +23,7 @@ function App() {
           </a>{" "}
           See my{" "}
           <a
-            href="https://github.com/mimmuv/miriro-vanilla-weather-app"
+            href="https://github.com/mimmuv/week5_weather_app"
             rel="noopener noreferrer"
             target="_blank"
           >
